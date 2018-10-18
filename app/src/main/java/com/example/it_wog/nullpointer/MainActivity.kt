@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         val textNull : String? =  null
         //Log.i("Test", "Der string TextNull ist ${textNull?.length} Zeichen lang")//? save call operator
-        Log.i("Test", "Der string TextNull ist ${textNull!!.length} Zeichen lang")//!! unsave call operator: null muss abgefangen werden sonst stürzt die APP ab
-        
+
+        try {
+            Log.i("Test", "Der string TextNull ist ${textNull!!.length} Zeichen lang")//!! unsave call operator: null muss abgefangen werden sonst stürzt die APP ab
+        } catch (e: KotlinNullPointerException) {
+            Log.i("Test", "FEHLER")
+        }
     }
 }
