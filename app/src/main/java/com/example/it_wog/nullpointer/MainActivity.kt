@@ -15,5 +15,13 @@ class MainActivity : AppCompatActivity() {
         val zahlnull : Int? = null //? damit Wert null annehmen kann
         if (zahlnull == null) Log.i("Test", "zahlnull hat den wert $zahlnull")
         else Log.i("Test", "zahlnull ist nicht null")
+
+        val text : String = "ABC"
+        Log.i("Test", "Der string Text ist ${text.length} Zeichen lang")
+
+        val textNull : String? =  null
+        //Log.i("Test", "Der string TextNull ist ${textNull?.length} Zeichen lang")//? save call operator
+        Log.i("Test", "Der string TextNull ist ${textNull!!.length} Zeichen lang")//!! unsave call operator: null muss abgefangen werden sonst stürzt die APP ab
+        
     }
 }
